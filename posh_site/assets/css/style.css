@@ -1,0 +1,6 @@
+:root{--rose:#f9a8d4;--lav:#a78bfa;--mint:#dff6f0;--snow:#f7f1ff;--gold:#facc15;--ink:#1f2937;}
+body{font-family:Inter,sans-serif;background:linear-gradient(135deg,var(--snow),var(--mint));color:var(--ink);margin:0;padding:0}
+.container{max-width:960px;margin:0 auto;padding:1rem}.brand span{color:var(--lav)}
+.site-header{background:rgba(255,255,255,.7);padding:1rem}.nav a{margin:0 .5rem}
+.hero{padding:4rem 0}.btn.primary{background:linear-gradient(135deg,var(--lav),var(--rose));color:white;padding:.5rem 1rem;border-radius:8px;text-decoration:none}
+.site-footer{padding:2rem 0;text-align:center;font-size:.9rem;opacity:.8}
