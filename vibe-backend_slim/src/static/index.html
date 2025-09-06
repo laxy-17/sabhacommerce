@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe - Discover Amazing Events Near You</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="nav">
+                <div class="logo">
+                    <span class="logo-icon">📍</span>
+                    <span class="logo-text">Vibe</span>
+                </div>
+                <div class="nav-actions">
+                    <button class="nav-btn" data-action="generateIdea">
+                        <span class="icon">💡</span>
+                    </button>
+                    <button class="nav-btn" data-action="inspireMe">
+                        <span class="icon">✨</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Discover Amazing Events<br>
+                    <span class="hero-highlight">Near You</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Find family-friendly activities, community events, and exciting experiences within your neighborhood
+                </p>
+                
+                <!-- Location Section -->
+                <div class="location-card">
+                    <div class="location-header">
+                        <span class="location-icon">📍</span>
+                        <span class="location-label">Current Location</span>
+                    </div>
+                    <div class="location-display" id="currentLocation">
+                        San Francisco, CA
+                    </div>
+                    <button class="location-btn" data-action="updateLocation">
+                        <span class="icon">📍</span>
+                        Update Location
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <span class="avatar-icon">👤</span>
+                </div>
+                <div class="profile-content">
+                    <div class="profile-status" id="profileStatus">Loading...</div>
+                    <div class="profile-subtitle">Loading profile...</div>
+                </div>
+                <div class="profile-actions">
+                    <button class="profile-btn" data-action="generateIdea">
+                        <span class="icon">💡</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Filters -->
+        <section class="filters-section">
+            <div class="filters-container">
+                <button class="filter-btn active" data-action="filterEvents" data-category="all">All Events</button>
+                <button class="filter-btn" data-action="filterEvents" data-category="kids">Kids</button>
+                <button class="filter-btn" data-action="filterEvents" data-category="community">Community</button>
+                <button class="filter-btn" data-action="filterEvents" data-category="dance">Dance</button>
+                <button class="filter-btn" data-action="filterEvents" data-category="outdoor">Outdoor</button>
+                <button class="filter-btn" data-action="filterEvents" data-category="educational">Educational</button>
+                <button class="filter-btn" data-action="filterEvents" data-category="fitness">Fitness</button>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="events-section">
+            <div class="events-header">
+                <h2 class="events-title">Events Near You</h2>
+                <div class="events-count" id="eventsCount">
+                    <span class="icon">📍</span>
+                    <span id="eventCountText">6 events within 10 miles</span>
+                </div>
+            </div>
+            
+            <div class="events-grid" id="eventsGrid">
+                <!-- Events will be loaded here dynamically -->
+            </div>
+        </section>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading...</div>
+        </div>
+
+        <!-- Modal for Event Details -->
+        <div class="modal" id="eventModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalTitle">Event Details</h3>
+                    <button class="modal-close" id="modalClose">&times;</button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Event details will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Inspiration Modal -->
+        <div class="modal" id="inspirationModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">✨ Inspiration</h3>
+                    <button class="modal-close" onclick="closeModal('inspirationModal')">&times;</button>
+                </div>
+                <div class="modal-body" id="inspirationContent">
+                    <!-- Inspiration content will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Idea Generation Modal -->
+        <div class="modal" id="ideaModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">💡 New Idea</h3>
+                    <button class="modal-close" onclick="closeModal('ideaModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="idea-form">
+                        <label for="ideaPrompt">What kind of idea are you looking for?</label>
+                        <textarea id="ideaPrompt" placeholder="e.g., Fun weekend activity for families, creative date night ideas, community event concepts..."></textarea>
+                        <button class="btn-primary" onclick="generateIdea()">Generate Idea</button>
+                    </div>
+                    <div id="ideaResult" class="idea-result" style="display: none;">
+                        <!-- Generated idea will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="action-client.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

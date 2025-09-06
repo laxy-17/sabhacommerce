@@ -1,0 +1,33 @@
+{
+  "generateIdea": {
+    "method": "POST",
+    "path": "/api/ai/generate-idea",
+    "description": "Generates a new idea (title, hook, CTA) using AI."
+  },
+  "findNearbyEvents": {
+    "method": "GET",
+    "path": "/api/realtime/events",
+    "description": "Finds nearby events based on zip code and radius."
+  },
+  "inspireMe": {
+    "method": "POST",
+    "path": "/api/ai/inspire",
+    "description": "Provides inspiration via web search and summarization."
+  },
+  "contact": {
+    "method": "POST",
+    "path": "/api/ops/contact",
+    "description": "Sends a contact email."
+  },
+  "updateLocation": {
+    "method": "POST",
+    "path": "/api/user/update-location",
+    "description": "Updates the user's current location."
+  },
+  "filterEvents": {
+    "method": "GET",
+    "path": "/api/realtime/events",
+    "description": "Filters events based on category."
+  }
+}
+
